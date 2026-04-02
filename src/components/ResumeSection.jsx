@@ -204,7 +204,7 @@ const ResumeSection = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full min-h-[100dvh] h-auto flex flex-col items-center justify-center bg-white py-12 md:py-20"
+      className="relative w-full min-h-[100dvh] h-auto flex flex-col items-center justify-center bg-white pt-12 pb-20 md:py-20"
     >
       {/* Background Decorative Gradient */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-50">
