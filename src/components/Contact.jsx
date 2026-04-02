@@ -214,7 +214,7 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="w-full h-[100dvh] lg:h-auto lg:w-[35%] flex justify-center shrink-0 snap-start px-4 sm:px-6 lg:px-0 pt-[60px] pb-6 lg:py-0"
+          className="w-full h-[100dvh] lg:h-auto lg:w-[35%] flex justify-center shrink-0 snap-start px-4 sm:px-6 lg:px-0 pt-10 pb-6 lg:py-0"
         >
           <div className="backdrop-blur-[35px] bg-white/[0.04] w-full max-w-sm lg:max-w-none rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_40px_100px_rgba(0,0,0,0.6)] border border-white/10 overflow-hidden group h-full flex flex-col relative">
             <div className="liquid-overlay" />
