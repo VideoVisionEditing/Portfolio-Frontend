@@ -39,7 +39,7 @@ const ShortsVideoSection = () => {
               REELS EDIT
             </h2>
             <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-              <h3 className="text-[clamp(1.5rem,3vw,2.5rem)] font-black uppercase tracking-tight leading-tight text-white/95">
+              <h3 className="hidden md:block text-[clamp(1.5rem,3vw,2.5rem)] font-black uppercase tracking-tight leading-tight text-white/95">
                 Reels & Tiktok
               </h3>
               <p className="text-gray-400 text-[clamp(0.85rem,1.1vw,1rem)] font-medium tracking-wide leading-relaxed max-w-[550px]">
@@ -57,7 +57,7 @@ const ShortsVideoSection = () => {
             className="w-full relative group max-w-[600px] lg:max-w-none"
           >
             <div className="rounded-[2rem] p-[2px] bg-gradient-to-r from-[#0C5051] via-[#92FD6F] to-[#0C5051] shadow-[0_0_40px_rgba(146,253,111,0.15)] transition-all group-hover:shadow-[0_0_60px_rgba(146,253,111,0.25)]">
-              <div className="relative w-full h-[clamp(110px,15vh,140px)] lg:h-[220px] overflow-hidden rounded-[1.9rem] bg-black">
+              <div className="relative w-full h-[clamp(90px,12vh,110px)] lg:h-[220px] overflow-hidden rounded-[1.9rem] bg-black">
                 <video
                   ref={timelineVideoRef}
                   data-src="/Website/Reel Edits/Video edit Time Line.mp4"
@@ -91,7 +91,7 @@ const ShortsVideoSection = () => {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full max-w-[220px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
+              className="relative w-full max-w-[180px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
             >
               <video
                 ref={phoneVideoRef}
