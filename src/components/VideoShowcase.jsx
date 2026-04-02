@@ -19,7 +19,7 @@ const VideoShowcase = () => {
   };
 
   return (
-    <section className="relative w-full h-[100dvh] overflow-hidden bg-black flex items-center justify-center">
+    <section className="relative w-full h-[100dvh] overflow-hidden bg-black flex items-center justify-center mb-10 md:mb-0">
 
       {/* 
         Full-screen video, edge-to-edge. 
