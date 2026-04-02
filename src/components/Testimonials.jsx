@@ -46,7 +46,7 @@ const TestimonialCard = ({ name, role, content, rating, avatar, header, index = 
   // - /uploads/ paths → backend static asset (Express), prefix with backend URL
   // - http(s):// URLs → use as-is
   const avatarSrc = avatar.startsWith('/uploads/')
-    ? `http://localhost:5000${avatar}`
+    ? `${import.meta.env.VITE_API_BASE_URL}${avatar}`
     : avatar;
 
   // Stable header: use provided header or pick deterministically by index
@@ -106,7 +106,7 @@ const Testimonials = () => {
   useEffect(() => {
     const fetchFeedback = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/contact');
+        const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/contact`);
         if (response.ok) {
           const data = await response.json();
           // Map DB fields to Card fields
