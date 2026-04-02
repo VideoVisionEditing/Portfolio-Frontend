@@ -3,7 +3,7 @@ import { motion, useAnimation } from 'framer-motion';
 
 const ScanSection = () => {
   return (
-    <section className="relative w-full h-screen min-h-[800px] overflow-hidden bg-[#0A0A0A] flex items-center justify-center font-sans select-none border-t border-white/5">
+    <section className="relative w-full h-screen min-h-[800px] overflow-hidden bg-[#0A0A0A] flex items-center justify-center font-sans select-none border-t border-white/5 mb-10 md:mb-0">
       
       {/* Background Noise/Grain overlay */}
       <div 

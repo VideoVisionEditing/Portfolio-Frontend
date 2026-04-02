@@ -72,7 +72,7 @@ const ShortsVideoSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-4 left-4 flex items-center gap-2">
                   <div className="w-1.5 h-1.5 bg-[#92FD6F] rounded-full animate-pulse" />
-                  <span className="text-[10px] font-bold text-white/58 tracking-widest uppercase">Project Timeline</span>
+                  <span className="text-[10px] font-bold text-white/90 tracking-widest uppercase">Project Timeline</span>
                 </div>
               </div>
             </div>

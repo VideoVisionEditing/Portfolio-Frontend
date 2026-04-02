@@ -101,7 +101,7 @@ const MotionGraphicSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
                 <div className="absolute top-4 right-4 flex items-center gap-2">
-                  <span className="text-[10px] font-bold text-white/40 tracking-widest uppercase">Motion Workspace</span>
+                  <span className="text-[10px] font-bold text-white/90 tracking-widest uppercase">Motion Workspace</span>
                   <div className="w-1.5 h-1.5 bg-[#E5203A] rounded-full animate-pulse" />
                 </div>
               </div>
