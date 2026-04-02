@@ -221,7 +221,7 @@ const ResumeSection = () => {
         {/* Airplane Sandwich Layer: z-20 (Between Text z-10 and Image z-30) */}
         <FlightAnimation isMobile={isMobile} />
 
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12 xl:gap-16 items-center justify-center w-full min-h-0 relative">
+        <div className="flex flex-col lg:flex-row gap-2 lg:gap-12 xl:gap-16 items-center justify-center w-full min-h-0 relative">
 
           {/* Left Side: Profile Image */}
           <motion.div
@@ -255,7 +255,7 @@ const ResumeSection = () => {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col justify-center gap-0 lg:gap-8 min-w-0 w-full lg:flex-1 p-6 lg:p-10 bg-white/20 backdrop-blur-md rounded-[2.5rem] border border-white/40 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] relative z-[10]"
+            className="flex flex-col justify-center gap-6 lg:gap-8 min-w-0 w-full lg:flex-1 px-5 pt-2 pb-2 sm:p-6 lg:p-10 bg-white/20 backdrop-blur-md rounded-[2.5rem] border border-white/40 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.05)] relative z-[10]"
           >
 
             {/* Name & Title */}
@@ -341,7 +341,7 @@ const ResumeSection = () => {
         </div>
 
         {/* Bottom Section: Software Grid (Compacted) */}
-        <div className="w-full mt-10 sm:mt-12 lg:mt-16 space-y-4 sm:space-y-5 lg:space-y-6">
+        <div className="w-full mt-0 sm:mt-8 lg:mt-12 space-y-4 sm:space-y-5 lg:space-y-6">
           <div className="flex items-center gap-4">
             <span className="text-xl sm:text-2xl lg:text-3xl font-crazy uppercase tracking-[0.2em] text-black">Software</span>
             <div className="flex-1 h-px bg-gray-100" />
