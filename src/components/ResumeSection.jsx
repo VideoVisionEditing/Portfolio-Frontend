@@ -228,7 +228,7 @@ const ResumeSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex-shrink-0 w-full max-w-[200px] sm:max-w-[280px] lg:max-w-[340px] xl:max-w-[380px] perspective-1000 mt-20 md:mt-10 lg:mt-0 relative z-[30]"
+            className="flex-shrink-0 w-full max-w-[160px] sm:max-w-[280px] lg:max-w-[340px] xl:max-w-[380px] perspective-1000 mt-20 md:mt-10 lg:mt-0 relative z-[30]"
           >
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -295,7 +295,7 @@ const ResumeSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative p-5 sm:p-6 bg-white/60 backdrop-blur-xl rounded-[2rem] flex items-center justify-between overflow-hidden"
+              className="relative p-3.5 sm:p-6 bg-white/60 backdrop-blur-xl rounded-[2rem] flex items-center justify-between overflow-hidden"
               style={{
                 border: "2px solid transparent",
                 backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, #FF94B2, #FFEBF2, #FF94B2)",
@@ -319,7 +319,7 @@ const ResumeSection = () => {
               ].map((stat, i) => (
                 <div key={i} className="flex flex-1 items-center justify-center gap-6 xl:gap-8">
                   <div className="flex flex-col items-center text-center">
-                    <div className="flex items-baseline justify-center gap-1.5 mb-1">
+                    <div className="flex items-baseline justify-center gap-1.5 mb-0.5">
                       <span className="text-[clamp(1.5rem,3vw,2.5rem)] font-black text-gray-900 tracking-tighter leading-none">
                         <CountUp end={stat.value} suffix={stat.suffix} />
                       </span>
