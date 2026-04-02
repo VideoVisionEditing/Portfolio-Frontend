@@ -170,7 +170,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="allow-wheel-scroll h-[100dvh] w-full bg-[#05070F] border-t border-white/5 overflow-x-hidden overflow-y-auto lg:overflow-hidden snap-y snap-mandatory lg:snap-none block lg:flex lg:items-center lg:justify-center relative selection:bg-blue-500/30 scroll-smooth mb-30 md:mb-0"
+      className="allow-wheel-scroll h-auto lg:h-[100dvh] w-full bg-[#05070F] border-t border-white/5 overflow-x-hidden overflow-y-auto lg:overflow-hidden snap-y snap-mandatory lg:snap-none block lg:flex lg:items-center lg:justify-center relative selection:bg-blue-500/30 scroll-smooth mb-30 md:mb-0"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -214,7 +214,7 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="w-full h-[100dvh] lg:h-auto lg:w-[35%] flex justify-center shrink-0 snap-start px-4 sm:px-6 lg:px-0 pt-10 pb-6 lg:py-0"
+          className="w-full h-auto lg:w-[35%] flex justify-center shrink-0 snap-start px-4 sm:px-6 lg:px-0 pt-10 pb-6 lg:py-0"
         >
           <div className="backdrop-blur-[35px] bg-white/[0.04] w-full max-w-sm lg:max-w-none rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_40px_100px_rgba(0,0,0,0.6)] border border-white/10 overflow-hidden group h-full flex flex-col relative">
             <div className="liquid-overlay" />
@@ -309,7 +309,7 @@ const Contact = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="w-full h-[100dvh] lg:h-auto lg:w-[65%] relative min-w-0 snap-start px-4 sm:px-6 lg:px-0 py-6 lg:py-0"
+          className="w-full h-auto lg:w-[65%] relative min-w-0 snap-start px-4 sm:px-6 lg:px-0 py-6 lg:py-0"
         >
           <motion.div
             className="backdrop-blur-[35px] bg-white/[0.03] rounded-[2.5rem] sm:rounded-[3.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.6)] border border-white/10 h-full flex flex-col relative overflow-hidden"
