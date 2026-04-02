@@ -18,7 +18,7 @@ const BroadcastSection = () => {
         <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-[#FF8C00] rounded-full blur-[150px] translate-y-1/2 translate-x-1/2 opacity-25" />
       </div>
 
-      <div className="max-w-[1400px] w-full px-4 sm:px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-16 relative z-10 h-auto">
+      <div className="max-w-[1400px] w-full px-4 sm:px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-0 sm:gap-6 lg:gap-16 relative z-10 h-auto">
 
         {/* Left Side: Text & Timeline (Constrained Height) */}
         <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-4 sm:gap-6 lg:gap-10 w-full lg:w-[55%] order-1 animate-fadeIn overflow-hidden">
@@ -40,7 +40,7 @@ const BroadcastSection = () => {
               BROADCAST
             </h2>
             <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-              <h3 className="text-[clamp(1.5rem,3vw,2.5rem)] font-black uppercase tracking-tight leading-tight text-white/90">
+              <h3 className="hidden md:block text-[clamp(1.5rem,3vw,2.5rem)] font-black uppercase tracking-tight leading-tight text-white/90">
                 Television & Media
               </h3>
               <p className="text-gray-400 text-[clamp(0.85rem,1.1vw,1rem)] font-medium tracking-wide leading-relaxed max-w-[550px]">
@@ -58,7 +58,7 @@ const BroadcastSection = () => {
             className="w-full relative group max-w-[600px] lg:max-w-none"
           >
             <div className="rounded-[2rem] p-[2px] bg-gradient-to-r from-[#FFD700] via-[#FF8C00] to-[#FFD700] shadow-[0_0_40px_rgba(255,215,0,0.2)] transition-all group-hover:shadow-[0_0_60px_rgba(255,215,0,0.3)]">
-              <div className="relative w-full h-[clamp(110px,15vh,140px)] lg:h-[220px] overflow-hidden rounded-[1.9rem] bg-black">
+              <div className="relative w-full h-[clamp(90px,12vh,110px)] lg:h-[220px] overflow-hidden rounded-[1.9rem] bg-black">
                 <video
                   ref={timelineVideoRef}
                   data-src="/Website/broadcast/Time line broadcast.mp4"
@@ -81,7 +81,7 @@ const BroadcastSection = () => {
         </div>
 
         {/* Right Side: Phone Mockup (Constrained Verticality) */}
-        <div className="flex justify-center items-center order-2 w-full lg:w-[40%] h-auto max-h-[90vh] lg:max-h-[100vh] relative pt-2 lg:py-0">
+        <div className="flex justify-center items-center order-2 w-full lg:w-[40%] h-auto max-h-[90vh] lg:max-h-[100vh] relative pt-0 -mt-4 lg:mt-0 lg:py-0">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 40 }}
             whileInView={{ scale: 1, opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ const BroadcastSection = () => {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full max-w-[220px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
+              className="relative w-full max-w-[160px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
             >
               <video
                 ref={phoneVideoRef}

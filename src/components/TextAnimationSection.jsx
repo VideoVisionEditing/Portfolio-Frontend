@@ -18,10 +18,10 @@ const TextAnimationSection = () => {
         <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-[#007FFF] rounded-full blur-[150px] translate-y-1/2 -translate-x-1/2 opacity-20" />
       </div>
 
-      <div className="max-w-[1400px] w-full px-4 sm:px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-16 relative z-10 h-auto">
+      <div className="max-w-[1400px] w-full px-4 sm:px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-0 sm:gap-6 lg:gap-16 relative z-10 h-auto">
 
         {/* Left Side: Phone Mockup (Constrained Verticality) */}
-        <div className="flex justify-center items-center order-2 lg:order-1 w-full lg:w-[40%] h-auto max-h-[90vh] lg:max-h-[100vh] relative pt-2 lg:py-0">
+        <div className="flex justify-center items-center order-2 lg:order-1 w-full lg:w-[40%] h-auto max-h-[90vh] lg:max-h-[100vh] relative pt-0 -mt-4 lg:mt-0 lg:py-0">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 40 }}
             whileInView={{ scale: 1, opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const TextAnimationSection = () => {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full max-w-[220px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
+              className="relative w-full max-w-[160px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
             >
               <video
                 ref={phoneVideoRef}
@@ -69,7 +69,7 @@ const TextAnimationSection = () => {
               TEXT ANIMATION
             </h2>
             <div className="space-y-2 sm:space-y-3 lg:space-y-4">
-              <h3 className="text-[clamp(1.5rem,3vw,2.5rem)] font-black uppercase tracking-tight leading-tight text-white/95">
+              <h3 className="hidden md:block text-[clamp(1.5rem,3vw,2.5rem)] font-black uppercase tracking-tight leading-tight text-white/95">
                 Dynamic Typography
               </h3>
               <p className="text-gray-400 text-[clamp(0.85rem,1.1vw,1rem)] font-qanelas font-medium tracking-wide leading-relaxed max-w-[550px]">
@@ -87,7 +87,7 @@ const TextAnimationSection = () => {
             className="w-full relative group lg:self-end max-w-[600px] lg:max-w-none"
           >
             <div className="rounded-[2rem] p-[2px] bg-gradient-to-r from-[#00FFFF] via-[#007FFF] to-[#00FFFF] shadow-[0_0_40px_rgba(0, 255, 255, 0.15)] transition-all group-hover:shadow-[0_0_60px_rgba(0, 255, 255, 0.25)]">
-              <div className="relative w-full h-[clamp(110px,15vh,140px)] lg:h-[220px] overflow-hidden rounded-[1.9rem] bg-black">
+              <div className="relative w-full h-[clamp(90px,12vh,110px)] lg:h-[220px] overflow-hidden rounded-[1.9rem] bg-black">
                 <video
                   ref={timelineVideoRef}
                   data-src="/Website/Text Animation/Time line Text Animation.mp4"
