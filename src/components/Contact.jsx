@@ -170,7 +170,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="allow-wheel-scroll h-[100dvh] w-full bg-[#05070F] border-t border-white/5 overflow-x-hidden overflow-y-auto lg:overflow-hidden snap-y snap-mandatory lg:snap-none block lg:flex lg:items-center lg:justify-center relative selection:bg-blue-500/30 scroll-smooth"
+      className="allow-wheel-scroll h-[100dvh] w-full bg-[#05070F] border-t border-white/5 overflow-x-hidden overflow-y-auto lg:overflow-hidden snap-y snap-mandatory lg:snap-none block lg:flex lg:items-center lg:justify-center relative selection:bg-blue-500/30 scroll-smooth mb-10 md:mb-0"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
