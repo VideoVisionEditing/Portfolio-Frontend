@@ -18,7 +18,7 @@ const ShortsVideoSection = () => {
         <div className="absolute bottom-0 right-0 w-[40vw] h-[40vw] bg-[#92FD6F] rounded-full blur-[150px] translate-y-1/2 translate-x-1/2 opacity-30" />
       </div>
 
-      <div className="max-w-[1400px] w-full px-4 sm:px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-4 sm:gap-6 lg:gap-16 relative z-10 h-auto">
+      <div className="max-w-[1400px] w-full px-4 sm:px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between gap-1 sm:gap-6 lg:gap-16 relative z-10 h-auto">
 
         <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left gap-8 lg:gap-10 w-full lg:w-[55%] order-1 animate-fadeIn overflow-hidden">
 
@@ -80,7 +80,7 @@ const ShortsVideoSection = () => {
         </div>
 
         {/* Right Side: Phone Mockup (Constrained Verticality) */}
-        <div className="flex justify-center items-center order-2 lg:order-2 w-full lg:w-[40%] h-auto max-h-[90vh] lg:max-h-[100vh] relative pt-2 lg:py-0">
+        <div className="flex justify-center items-center order-2 lg:order-2 w-full lg:w-[40%] h-auto max-h-[90vh] lg:max-h-[100vh] relative pt-0 lg:py-0">
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 40 }}
             whileInView={{ scale: 1, opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ const ShortsVideoSection = () => {
             <motion.div
               animate={{ y: [-10, 10, -10] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="relative w-full max-w-[180px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
+              className="relative w-full max-w-[160px] sm:max-w-[240px] lg:max-w-[280px] xl:max-w-[340px] aspect-[9/19.5] flex justify-center items-center mx-auto"
             >
               <video
                 ref={phoneVideoRef}
