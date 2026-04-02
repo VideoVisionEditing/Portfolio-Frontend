@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@400..900&family=Outfit:wght@300..900&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Crazy Sixties';
+  src: url('/Fonts/crazy_sixties/Crazy Sixties.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Gampolins';
+  src: url('/Fonts/Portfolio Fonts/Title Fonts/Gampolins demo.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Qanelas';
+  src: url('/Fonts/Portfolio Fonts/Small text/Qanelas-SemiBold.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-crazy: "Crazy Sixties", sans-serif;
+  --font-gampolins: "Gampolins", sans-serif;
+  --font-qanelas: "Qanelas", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --color-obsidian: #0a0a0a;
+  --color-accent: #E21C34;
+  /* Electric Blue */
+  --color-accent-glow: rgba(59, 130, 246, 0.4);
+  --color-muted: #6b7280;
+  --color-surface: #1a1a1a;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-obsidian);
+  color: #ededed;
+  font-family: var(--font-sans);
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  color: transparent;
+}
+
+.blur-magnify {
+  filter: blur(8px);
+  transition: filter 0.3s ease;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.blur-magnify:hover {
+  filter: blur(0px);
+}
+
+/* Hero Letters Base Style */
+.hero-letter {
+  display: inline-block;
+  padding: 0.1em 0.05em;
+  /* Padding on all sides to prevent clipping */
+  margin: -0.1em -0.05em;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text-gradient-hero-accent {
+  background: linear-gradient(to bottom, #E21C34, #500B28);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.hover-gradient-hero:hover {
+  background: linear-gradient(to bottom, #FF94B2, #F24455) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  filter: drop-shadow(0 0 10px rgba(255, 148, 178, 0.3));
+  transform: translateY(-2px);
+  /* Subtle lift for a smoother feel */
+}
+
+/* Marquee / Auto-Scroll Animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  pointer-events: auto;
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.marquee-content {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+  padding: 1rem;
+}
+
+.marquee-content:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
