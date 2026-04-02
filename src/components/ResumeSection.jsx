@@ -228,7 +228,7 @@ const ResumeSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="flex-shrink-0 w-full max-w-[160px] sm:max-w-[280px] lg:max-w-[340px] xl:max-w-[380px] perspective-1000 mt-20 md:mt-10 lg:mt-0 relative z-[30]"
+            className="flex-shrink-0 w-full max-w-[140px] sm:max-w-[280px] lg:max-w-[340px] xl:max-w-[380px] perspective-1000 mt-20 md:mt-10 lg:mt-0 relative z-[30]"
           >
             <motion.div
               whileHover={{ scale: 1.03 }}
@@ -286,7 +286,12 @@ const ResumeSection = () => {
                 transition={{ delay: 0.1 }}
                 className="text-[clamp(0.9rem,1.2vw,1.1rem)] font-qanelas font-medium text-gray-500 leading-relaxed max-w-[800px]"
               >
-                I’m a passionate Video Editor with 2+ years of experience in YouTube and Social Media content. I turn raw footage into cinematic stories using motion graphics and modern visual effects. I enjoy turning raw footage into something creative and meaningful through storytelling and clean editing. My focus is to create content that connects with the audience and looks professional.
+                <span className="md:hidden">
+                  Passionate Video Editor with 2+ years of experience. I transform raw footage into cinematic stories through creative storytelling and professional editing.
+                </span>
+                <span className="hidden md:block">
+                  I’m a passionate Video Editor with 2+ years of experience in YouTube and Social Media content. I turn raw footage into cinematic stories using motion graphics and modern visual effects. I enjoy turning raw footage into something creative and meaningful through storytelling and clean editing. My focus is to create content that connects with the audience and looks professional.
+                </span>
               </motion.p>
             </div>
 
