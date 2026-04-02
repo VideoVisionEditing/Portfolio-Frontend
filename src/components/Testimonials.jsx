@@ -54,7 +54,7 @@ const TestimonialCard = ({ name, role, content, rating, avatar, header, index = 
 
   return (
     <motion.div
-      className="flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-xl w-[260px] sm:w-[320px] mx-auto group h-[300px] sm:h-[350px] min-h-[300px] sm:min-h-[350px] max-h-[300px] sm:max-h-[350px] shrink-0"
+      className="flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-xl w-[230px] sm:w-[320px] mx-auto group h-[280px] sm:h-[350px] min-h-[280px] sm:min-h-[350px] max-h-[280px] sm:max-h-[350px] shrink-0"
     >
       <div className="h-14 sm:h-34 w-full shrink-0 relative overflow-hidden rounded-t-[2rem]">
         <img 
@@ -89,9 +89,9 @@ const TestimonialCard = ({ name, role, content, rating, avatar, header, index = 
           {content}
         </p>
 
-        <div className="mt-auto flex gap-1.5">
+        <div className="mt-auto flex gap-1 sm:gap-1.5">
           {[...Array(5)].map((_, i) => (
-            <Star key={i} size={28} fill={i < rating ? "#FACC15" : "#E5E7EB"} className={i < rating ? "text-[#FACC15]" : "text-gray-200"} />
+            <Star key={i} size={18} fill={i < rating ? "#FACC15" : "#E5E7EB"} className={`sm:w-6 sm:h-6 ${i < rating ? "text-[#FACC15]" : "text-gray-200"}`} />
           ))}
         </div>
       </div>
@@ -138,7 +138,7 @@ const Testimonials = () => {
   const useMarquee = displayItems.length > 4;
 
   return (
-    <section className="h-full w-full bg-[#05070F] border-t border-white/5 relative flex flex-col pt-16 lg:pt-10 pb-4 sm:pb-6 overflow-hidden">
+    <section className="h-full w-full bg-[#05070F] border-t border-white/5 relative flex flex-col pt-10 sm:pt-16 lg:pt-10 pb-4 sm:pb-6 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#1e3a8a33,transparent_60%)] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto w-full px-6 flex flex-col relative z-10">
@@ -150,7 +150,7 @@ const Testimonials = () => {
           >
             Trusted by Creators
           </motion.span>
-          <h2 className="text-6xl sm:text-5xl lg:text-6xl font-display font-black text-white tracking-tighter mb-8 sm:mb-4">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black text-white tracking-tighter mb-4 sm:mb-4">
             What My <span className="text-blue-500 italic">Clients Say</span>
           </h2>
           <p className="text-white/70 font-bold text-xs sm:text-lg tracking-wide max-w-2xl mx-auto">
