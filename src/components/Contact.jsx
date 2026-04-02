@@ -154,7 +154,7 @@ const Contact = () => {
         setAvatarFile(null);
         setAvatarPreview(null);
         if (fileInputRef.current) fileInputRef.current.value = "";
-        
+
         // Optional: Reset after a few seconds
         setTimeout(() => setIsSubmitted(false), 8000);
       } else {
@@ -170,7 +170,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="allow-wheel-scroll h-[100dvh] w-full bg-[#05070F] border-t border-white/5 overflow-x-hidden overflow-y-auto lg:overflow-hidden snap-y snap-mandatory lg:snap-none block lg:flex lg:items-center lg:justify-center relative selection:bg-blue-500/30 scroll-smooth mb-10 md:mb-0"
+      className="allow-wheel-scroll h-[100dvh] w-full bg-[#05070F] border-t border-white/5 overflow-x-hidden overflow-y-auto lg:overflow-hidden snap-y snap-mandatory lg:snap-none block lg:flex lg:items-center lg:justify-center relative selection:bg-blue-500/30 scroll-smooth mb-30 md:mb-0"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -314,174 +314,174 @@ const Contact = () => {
           <motion.div
             className="backdrop-blur-[35px] bg-white/[0.03] rounded-[2.5rem] sm:rounded-[3.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.6)] border border-white/10 h-full flex flex-col relative overflow-hidden"
           >
-                <div className="liquid-overlay" />
+            <div className="liquid-overlay" />
 
-                {/* Header */}
-                <div className="px-6 sm:px-12 py-5 sm:py-7 flex items-center justify-between border-b border-white/5 z-20 shrink-0 relative">
-                  <div className="flex gap-3 sm:gap-5 items-center">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 shadow-[0_0_20px_rgba(59,130,246,0.15)] shrink-0">
-                      <Star size={18} className="text-blue-400" />
+            {/* Header */}
+            <div className="px-6 sm:px-12 py-5 sm:py-7 flex items-center justify-between border-b border-white/5 z-20 shrink-0 relative">
+              <div className="flex gap-3 sm:gap-5 items-center">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 shadow-[0_0_20px_rgba(59,130,246,0.15)] shrink-0">
+                  <Star size={18} className="text-blue-400" />
+                </div>
+                <div className="min-w-0">
+                  <h2 className="text-xl sm:text-2xl font-display font-black text-white tracking-tight truncate">Client Feedback</h2>
+                  <p className="text-white/30 font-bold text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mt-0.5 truncate">Leave your review</p>
+                </div>
+              </div>
+
+              {/* Avatar Upload (Top Right) */}
+              <div className="absolute right-6 sm:right-12 top-1/2 -translate-y-1/2 flex items-center">
+                <div className="relative group/avatar">
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={handleFileChange}
+                    accept="image/*"
+                    className="hidden"
+                  />
+                  <motion.button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center overflow-hidden relative transition-all hover:border-blue-500/50 hover:bg-blue-500/10 group shadow-lg"
+                  >
+                    {avatarPreview ? (
+                      <img src={avatarPreview} alt="preview" className="w-full h-full object-cover" />
+                    ) : (
+                      <div className="flex flex-col items-center text-white/20 group-hover:text-blue-400">
+                        <Camera size={14} className="sm:size-5" />
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
+                      <Camera size={14} className="text-white" />
                     </div>
-                    <div className="min-w-0">
-                      <h2 className="text-xl sm:text-2xl font-display font-black text-white tracking-tight truncate">Client Feedback</h2>
-                      <p className="text-white/30 font-bold text-[8px] sm:text-[10px] uppercase tracking-[0.25em] mt-0.5 truncate">Leave your review</p>
+                  </motion.button>
+
+                  {avatarPreview && (
+                    <motion.button
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      type="button"
+                      onClick={removeAvatar}
+                      className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg border-2 border-[#0A0E1A]"
+                    >
+                      <X size={10} />
+                    </motion.button>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Form Content */}
+            <form onSubmit={handleSubmit} className="px-6 sm:px-12 py-6 sm:py-8 space-y-6 sm:space-y-8 flex-grow flex flex-col z-10 overflow-hidden">
+              {/* Rating Section */}
+              <div className="space-y-3 sm:space-y-4">
+                <span className="text-[8px] sm:text-[10px] font-black text-white/30 uppercase tracking-[0.4em] block text-center truncate">How would you rate my work?</span>
+                <div className="flex gap-3 sm:gap-5 justify-center">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <motion.button
+                      key={star}
+                      type="button"
+                      onClick={() => handleRating(star)}
+                      whileTap={{ scale: 0.95 }}
+                      className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full border flex items-center justify-center transition-all duration-500 relative group overflow-hidden shrink-0 ${reviewData.rating >= star
+                        ? 'bg-blue-500/10 border-blue-500/50 shadow-[0_0_30px_rgba(59,130,246,0.4)]'
+                        : 'bg-white/[0.03] border-white/5'
+                        }`}
+                    >
+                      <Star
+                        size={reviewData.rating >= star ? 20 : 18}
+                        fill={reviewData.rating >= star ? '#3B82F6' : 'transparent'}
+                        className={reviewData.rating >= star ? 'text-blue-400 drop-shadow-[0_0_12px_rgba(59,130,246,0.8)]' : 'text-white/10 group-hover:text-white/30'}
+                      />
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Inputs */}
+              <div className="space-y-6 sm:space-y-8 min-h-0 flex-grow flex flex-col pt-2">
+                <div className="space-y-2 sm:space-y-3 shrink-0">
+                  <span className="text-[8px] sm:text-[10px] font-black text-white/30 uppercase tracking-[0.4em] block pl-1 truncate">Your Name</span>
+                  <div className="relative group">
+                    <input
+                      name="userName"
+                      value={reviewData.userName}
+                      onChange={handleChange}
+                      placeholder="What should I call you?"
+                      className="w-full h-12 sm:h-14 bg-white/[0.03] border border-white/5 rounded-full px-6 sm:px-8 font-sans text-sm sm:text-[15px] text-white placeholder:text-white/10 focus:outline-none focus:bg-white/[0.06] focus:border-blue-500/50 shadow-inner group-hover:border-white/20 transition-all font-medium"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-2 sm:space-y-3 flex-grow flex flex-col min-h-0">
+                  <span className="text-[8px] sm:text-[10px] font-black text-white/30 uppercase tracking-[0.4em] block pl-1 truncate">Your Feedback</span>
+                  <div className="relative group flex-grow min-h-0">
+                    <textarea
+                      name="reviewText"
+                      value={reviewData.reviewText}
+                      onChange={handleChange}
+                      maxLength={200}
+                      placeholder="Tell me about your experience..."
+                      className="w-full h-full min-h-[120px] bg-white/[0.03] border border-white/5 rounded-[2rem] p-4 sm:p-5 font-sans text-sm sm:text-[15px] text-white placeholder:text-white/10 focus:outline-none focus:bg-white/[0.06] focus:border-blue-500/50 shadow-inner group-hover:border-white/20 transition-all resize-none font-medium leading-relaxed break-all overflow-y-auto overflow-x-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    />
+                    <div className="absolute bottom-4 right-6 sm:bottom-6 sm:right-8">
+                      <span className={`text-[9px] sm:text-[11px] font-black tracking-widest ${reviewData.reviewText.length >= 200 ? 'text-red-500' : 'text-blue-500/60'}`}>
+                        {reviewData.reviewText.length} <span className="text-white/10">/</span> 200
+                      </span>
                     </div>
                   </div>
+                </div>
+              </div>
+            </form>
 
-                  {/* Avatar Upload (Top Right) */}
-                  <div className="absolute right-6 sm:right-12 top-1/2 -translate-y-1/2 flex items-center">
-                    <div className="relative group/avatar">
-                      <input
-                        type="file"
-                        ref={fileInputRef}
-                        onChange={handleFileChange}
-                        accept="image/*"
-                        className="hidden"
-                      />
-                      <motion.button
-                        type="button"
-                        onClick={() => fileInputRef.current?.click()}
-                        whileTap={{ scale: 0.95 }}
-                        className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center overflow-hidden relative transition-all hover:border-blue-500/50 hover:bg-blue-500/10 group shadow-lg"
-                      >
-                        {avatarPreview ? (
-                          <img src={avatarPreview} alt="preview" className="w-full h-full object-cover" />
-                        ) : (
-                          <div className="flex flex-col items-center text-white/20 group-hover:text-blue-400">
-                            <Camera size={14} className="sm:size-5" />
-                          </div>
-                        )}
-                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-                          <Camera size={14} className="text-white" />
-                        </div>
-                      </motion.button>
-
-                      {avatarPreview && (
-                        <motion.button
-                          initial={{ scale: 0 }}
-                          animate={{ scale: 1 }}
-                          type="button"
-                          onClick={removeAvatar}
-                          className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full flex items-center justify-center text-white shadow-lg border-2 border-[#0A0E1A]"
-                        >
-                          <X size={10} />
-                        </motion.button>
+            {/* Submit Section */}
+            <div className="px-6 sm:px-12 py-6 sm:py-8 bg-white/[0.02] border-t border-white/5 flex justify-center items-center z-10 shrink-0 min-h-[100px]">
+              <AnimatePresence mode="wait">
+                {!isSubmitted ? (
+                  <motion.button
+                    key="submitBtn"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, y: -20, scale: 0.9 }}
+                    transition={{ duration: 0.4 }}
+                    onClick={handleSubmit}
+                    disabled={status === 'loading'}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full h-14 sm:h-16 relative rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black font-sans uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[9px] sm:text-[11px] shadow-[0_15px_30px_rgba(59,130,246,0.3)] disabled:opacity-70 group/btn overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000 ease-in-out skew-x-[30deg]" />
+                    <div className="relative flex items-center justify-center gap-3 sm:gap-4 truncate px-4">
+                      {status === 'loading' ? (
+                        <>
+                          <Loader2 className="animate-spin shrink-0" size={16} />
+                          <span>Finalizing...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="truncate">Submit Your Feedback</span>
+                          <ChevronRight size={16} className="group-hover/btn:translate-x-2 transition-transform duration-300 shrink-0" />
+                        </>
                       )}
                     </div>
-                  </div>
-                </div>
-
-                {/* Form Content */}
-                <form onSubmit={handleSubmit} className="px-6 sm:px-12 py-6 sm:py-8 space-y-6 sm:space-y-8 flex-grow flex flex-col z-10 overflow-hidden">
-                  {/* Rating Section */}
-                  <div className="space-y-3 sm:space-y-4">
-                    <span className="text-[8px] sm:text-[10px] font-black text-white/30 uppercase tracking-[0.4em] block text-center truncate">How would you rate my work?</span>
-                    <div className="flex gap-3 sm:gap-5 justify-center">
-                      {[1, 2, 3, 4, 5].map((star) => (
-                        <motion.button
-                          key={star}
-                          type="button"
-                          onClick={() => handleRating(star)}
-                          whileTap={{ scale: 0.95 }}
-                          className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full border flex items-center justify-center transition-all duration-500 relative group overflow-hidden shrink-0 ${reviewData.rating >= star
-                            ? 'bg-blue-500/10 border-blue-500/50 shadow-[0_0_30px_rgba(59,130,246,0.4)]'
-                            : 'bg-white/[0.03] border-white/5'
-                            }`}
-                        >
-                          <Star
-                            size={reviewData.rating >= star ? 20 : 18}
-                            fill={reviewData.rating >= star ? '#3B82F6' : 'transparent'}
-                            className={reviewData.rating >= star ? 'text-blue-400 drop-shadow-[0_0_12px_rgba(59,130,246,0.8)]' : 'text-white/10 group-hover:text-white/30'}
-                          />
-                        </motion.button>
-                      ))}
+                  </motion.button>
+                ) : (
+                  <motion.div
+                    key="successMsg"
+                    initial={{ opacity: 0, y: 15, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                    className="flex items-center justify-center gap-3 text-white font-bold tracking-widest uppercase text-[10px] sm:text-[12px]"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/50">
+                      <CheckCircle size={16} className="text-blue-400" />
                     </div>
-                  </div>
-
-                  {/* Inputs */}
-                  <div className="space-y-6 sm:space-y-8 min-h-0 flex-grow flex flex-col pt-2">
-                    <div className="space-y-2 sm:space-y-3 shrink-0">
-                      <span className="text-[8px] sm:text-[10px] font-black text-white/30 uppercase tracking-[0.4em] block pl-1 truncate">Your Name</span>
-                      <div className="relative group">
-                        <input
-                          name="userName"
-                          value={reviewData.userName}
-                          onChange={handleChange}
-                          placeholder="What should I call you?"
-                          className="w-full h-12 sm:h-14 bg-white/[0.03] border border-white/5 rounded-full px-6 sm:px-8 font-sans text-sm sm:text-[15px] text-white placeholder:text-white/10 focus:outline-none focus:bg-white/[0.06] focus:border-blue-500/50 shadow-inner group-hover:border-white/20 transition-all font-medium"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2 sm:space-y-3 flex-grow flex flex-col min-h-0">
-                      <span className="text-[8px] sm:text-[10px] font-black text-white/30 uppercase tracking-[0.4em] block pl-1 truncate">Your Feedback</span>
-                      <div className="relative group flex-grow min-h-0">
-                        <textarea
-                          name="reviewText"
-                          value={reviewData.reviewText}
-                          onChange={handleChange}
-                          maxLength={200}
-                          placeholder="Tell me about your experience..."
-                          className="w-full h-full min-h-[120px] bg-white/[0.03] border border-white/5 rounded-[2rem] p-4 sm:p-5 font-sans text-sm sm:text-[15px] text-white placeholder:text-white/10 focus:outline-none focus:bg-white/[0.06] focus:border-blue-500/50 shadow-inner group-hover:border-white/20 transition-all resize-none font-medium leading-relaxed break-all overflow-y-auto overflow-x-hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-                        />
-                        <div className="absolute bottom-4 right-6 sm:bottom-6 sm:right-8">
-                          <span className={`text-[9px] sm:text-[11px] font-black tracking-widest ${reviewData.reviewText.length >= 200 ? 'text-red-500' : 'text-blue-500/60'}`}>
-                            {reviewData.reviewText.length} <span className="text-white/10">/</span> 200
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-
-                {/* Submit Section */}
-                <div className="px-6 sm:px-12 py-6 sm:py-8 bg-white/[0.02] border-t border-white/5 flex justify-center items-center z-10 shrink-0 min-h-[100px]">
-                  <AnimatePresence mode="wait">
-                    {!isSubmitted ? (
-                      <motion.button
-                        key="submitBtn"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, y: -20, scale: 0.9 }}
-                        transition={{ duration: 0.4 }}
-                        onClick={handleSubmit}
-                        disabled={status === 'loading'}
-                        whileTap={{ scale: 0.98 }}
-                        className="w-full h-14 sm:h-16 relative rounded-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 text-white font-black font-sans uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[9px] sm:text-[11px] shadow-[0_15px_30px_rgba(59,130,246,0.3)] disabled:opacity-70 group/btn overflow-hidden"
-                      >
-                        <div className="absolute inset-0 bg-white/20 translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-1000 ease-in-out skew-x-[30deg]" />
-                        <div className="relative flex items-center justify-center gap-3 sm:gap-4 truncate px-4">
-                          {status === 'loading' ? (
-                            <>
-                              <Loader2 className="animate-spin shrink-0" size={16} />
-                              <span>Finalizing...</span>
-                            </>
-                          ) : (
-                            <>
-                              <span className="truncate">Submit Your Feedback</span>
-                              <ChevronRight size={16} className="group-hover/btn:translate-x-2 transition-transform duration-300 shrink-0" />
-                            </>
-                          )}
-                        </div>
-                      </motion.button>
-                    ) : (
-                      <motion.div
-                        key="successMsg"
-                        initial={{ opacity: 0, y: 15, scale: 0.9 }}
-                        animate={{ opacity: 1, y: 0, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="flex items-center justify-center gap-3 text-white font-bold tracking-widest uppercase text-[10px] sm:text-[12px]"
-                      >
-                        <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center border border-blue-500/50">
-                          <CheckCircle size={16} className="text-blue-400" />
-                        </div>
-                        <span className="text-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">Review Submitted Successfully</span>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </motion.div>
+                    <span className="text-blue-400 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]">Review Submitted Successfully</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
