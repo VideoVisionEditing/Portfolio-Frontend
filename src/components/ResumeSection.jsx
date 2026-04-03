@@ -332,7 +332,7 @@ const ResumeSection = () => {
                         <span className="text-[10px] sm:text-xs font-bold text-gray-400">Yrs</span>
                       )}
                     </div>
-                    <span className="text-[10px] sm:text-[11px] uppercase font-bold tracking-[0.2em] text-gray-500">
+                    <span className="text-[8.5px] sm:text-[11px] uppercase font-bold tracking-wider sm:tracking-[0.2em] text-gray-500 break-words text-center">
                       {stat.label}
                     </span>
                   </div>
