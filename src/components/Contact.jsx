@@ -253,7 +253,7 @@ const Contact = () => {
                 {[
                   { label: "Rating", to: 4.2, decimal: 1, icon: "⭐" },
                   { label: "Projects", to: 120, suffix: "+", icon: "🎬" },
-                  { label: "Experience", to: 2, suffix: "+", icon: "💼" },
+                  { label: "Experience", to: 2, suffix: "+ Years", icon: "💼" },
                 ].map((stat, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <span className="text-xl leading-none">{stat.icon}</span>
