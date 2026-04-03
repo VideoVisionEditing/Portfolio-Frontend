@@ -7,7 +7,7 @@ const ReelVideo = ({ src }) => {
   const videoRef = useRef(null);
 
   return (
-    <div className="h-[100dvh] w-full flex-shrink-0 snap-start relative bg-black flex items-center justify-center overflow-hidden">
+    <div className="h-[100dvh] w-full flex-shrink-0 snap-start relative bg-black flex items-center justify-center overflow-hidden mb-20 md:mb-0">
       <video
         ref={videoRef}
         src={src}
