@@ -85,7 +85,7 @@ const TestimonialCard = ({ name, role, content, rating, avatar, header, index = 
           <p className="text-black/40 font-bold text-[9px] sm:text-[10px] tracking-widest uppercase">{role || "Client Feedback"}</p>
         </div>
 
-        <p className="text-black/70 font-bold leading-tight text-[10px] sm:text-[12px] italic mb-3 line-clamp-3">
+        <p className="text-black/70 font-bold leading-tight text-[10px] sm:text-[12px] italic mb-3 line-clamp-5 sm:line-clamp-3">
           {content}
         </p>
 
