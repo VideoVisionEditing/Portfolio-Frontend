@@ -300,7 +300,7 @@ const ResumeSection = () => {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="relative p-3.5 sm:p-6 bg-white/60 backdrop-blur-xl rounded-[2rem] flex items-center justify-between overflow-hidden"
+              className="relative p-3.5 sm:p-6 bg-white/60 backdrop-blur-xl rounded-[2rem] flex gap-4 sm:gap-0 items-center justify-between overflow-hidden"
               style={{
                 border: "2px solid transparent",
                 backgroundImage: "linear-gradient(white, white), linear-gradient(135deg, #FF94B2, #FFEBF2, #FF94B2)",
