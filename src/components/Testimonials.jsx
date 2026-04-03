@@ -54,9 +54,9 @@ const TestimonialCard = ({ name, role, content, rating, avatar, header, index = 
 
   return (
     <motion.div
-      className="flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-xl w-[230px] sm:w-[320px] mx-auto group h-[280px] sm:h-[350px] min-h-[280px] sm:min-h-[350px] max-h-[280px] sm:max-h-[350px] shrink-0"
+      className="flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-xl w-[230px] sm:w-[320px] mx-auto group h-[300px] sm:h-[350px] min-h-[300px] sm:min-h-[350px] max-h-[300px] sm:max-h-[350px] shrink-0"
     >
-      <div className="h-14 sm:h-34 w-full shrink-0 relative overflow-hidden rounded-t-[2rem]">
+      <div className="h-20 sm:h-32 w-full shrink-0 relative overflow-hidden rounded-t-[2rem]">
         <img 
           src={resolvedHeader}
           alt="header" 
